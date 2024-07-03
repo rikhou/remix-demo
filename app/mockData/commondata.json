@@ -1,0 +1,242 @@
+{
+  "header": {
+    "bgImageUrl": "",
+    "logo": {
+      "path": "/images/mt_logo.png",
+      "targetLink": "/"
+    }
+  },
+  "firstLevelMenuItems": [
+    {
+      "text": "Reservations Home",
+      "link": "/welcome.do",
+      "displayOrder": 0,
+      "children": [],
+      "helpfulLinks": null
+    },
+    {
+      "text": "Reservation Policies",
+      "link": "https://fwp.mt.gov/stateparks/fees-and-general-information",
+      "displayOrder": 0,
+      "children": [],
+      "helpfulLinks": null
+    },
+    {
+      "text": "HRS",
+      "link": "/a1-px-app/indexHRS",
+      "displayOrder": 0,
+      "children": [],
+      "helpfulLinks": null
+    }
+  ],
+  "searchCriteria": {
+    "searchLabel": {
+      "interestedIn": "Interested In",
+      "location": "Location",
+      "date": "Date",
+      "guest": "Occupants",
+      "noMatchingLocations": "No matching locations."
+    },
+    "interestedIns": [
+      {
+        "title": "-- Please Select --",
+        "value": "select"
+      },
+      {
+        "title": "Everything",
+        "value": "all"
+      },
+      {
+        "title": "Camping & Lodging",
+        "value": "camping"
+      },
+      {
+        "title": "Day use & Picnic areas",
+        "value": "dayuse"
+      }
+    ],
+    "defaultInterestedIns": {
+      "title": "Camping & Lodging",
+      "value": "camping"
+    },
+    "searchConfig": {
+      "nearbySearch": null
+    }
+  },
+  "footer": {
+    "logo": "/images/logo-wordmark.png",
+    "logoLink": "/",
+    "information": {
+      "title": "Information",
+      "links": [
+        {
+          "label": "Brochures and Maps",
+          "path": "https://stateparks.oregon.gov/index.cfm?do=v.dsp_publications"
+        },
+        {
+          "label": "News Media",
+          "path": "https://stateparks.oregon.gov/index.cfm?do=v.dsp_news"
+        },
+        {
+          "label": "Contact",
+          "path": "https://stateparks.oregon.gov/index.cfm?do=v.dsp_contact"
+        },
+        {
+          "label": "Commenting Guidelines",
+          "path": "https://stateparks.oregon.gov/index.cfm?do=v.page&id=86"
+        }
+      ]
+    },
+    "customerLinks": {
+      "title": "Helpful links",
+      "links": [
+        {
+          "label": "Contact Aspira",
+          "path": "https://aspiraconnect.service-now.com/csp?id=kb_category&kb_category=b58396d987be0910122d8446cebb3553"
+        },
+        {
+          "label": "Help & FAQs",
+          "path": "https://stateparks.oregon.gov/index.cfm?do=visit.dsp_faq"
+        },
+        {
+          "label": "Privacy Policy",
+          "path": "https://aspiraconnect.com/privacy-policy"
+        },
+        {
+          "label": "Copyright Policy",
+          "path": "https://aspiraconnect.com/copyright-policy"
+        },
+        {
+          "label": "Terms of Use",
+          "path": "https://aspiraconnect.com/terms-of-use"
+        },
+        {
+          "label": "Cookie Policy",
+          "path": "https://aspiraconnect.com/cookie-policy"
+        }
+      ]
+    },
+    "introduction": {
+      "mapUrl": "/images/px/footer-map.svg",
+      "parkDesc": "Each of our Oregon state parks is an individual place where people play, picnic, camp, rest, hike, renew, and everything in between. They are an everyday reminder of the things that make Oregon great, and their very existence is a testament to what we collectively value.",
+      "explore": {
+        "label": "Explore all parks",
+        "path": "https://stateparks.oregon.gov/index.cfm?do=visit.find"
+      }
+    },
+    "newsLetter": null,
+    "payments": {
+      "visa": true,
+      "mastercard": true,
+      "paypal": false,
+      "discover": true
+    },
+    "contacts": {
+      "address": {
+        "icon": "/images/px/footerinfo.svg",
+        "text": "Oregon Parks and Recreation Department 725 Summer Street NE, Suite C Salem, OR 97301"
+      },
+      "phones": {
+        "icon": "/images/px/footercontact.svg",
+        "text": [
+          {
+            "name": "Reservations",
+            "value": "(800) 452-5687"
+          },
+          {
+            "name": "Information",
+            "value": "(800) 551-6949"
+          },
+          {
+            "name": "Office",
+            "value": "(503) 986-0707"
+          }
+        ]
+      },
+      "government": {
+        "logo": "/images/footer-logo-hover.png",
+        "text": "Learn about veteran benefits with Oregon Department of Veterans' Affairs",
+        "link": "https://www.oregon.gov/odva/Pages/default.aspx"
+      }
+    },
+    "copyRight": "&copy; 2022 Oregon Parks and Recreation Department. All Rights Reserved"
+  },
+  "bannerAlert": {
+    "show": true,
+    "message": "<div style=\"background:#222222;padding: 5px 20px 5px 0px;display:flex\">\r\n<p style=\"margin: unset;flex:5;\"><span style=\"font-size:14px;\"><span style=\"color:#FFFFFF;\">For the latest information on COVID-19 in Oregon, visit the Oregon Health Authority. For the latest Oregon State Parks updates,&nbsp;visit our Frequently Asked Questions web page.</span></span></p>\r\n</div>\r\n",
+    "collapsedAlertText": "Information"
+  },
+  "theme": {
+    "light": {
+      "palette": {
+        "primary": {
+          "main": "#008567",
+          "dark": "#004636",
+          "25": "#E8FFFA",
+          "50": "#B9FFEF",
+          "100": "#8BFFE5",
+          "200": "#5DFFDA",
+          "300": "#2EFFD0",
+          "400": "#00FFC5",
+          "500": "#00D1A2",
+          "600": "#00A27E",
+          "700": "#008567",
+          "800": "#004636",
+          "900": "#001712"
+        },
+        "secondary": {
+          "main": "#93D4EE",
+          "25": "#EBF7FC",
+          "50": "#C3E7F6",
+          "100": "#93D4EE",
+          "200": "#73C7E9",
+          "300": "#4BB7E3",
+          "400": "#23A7DC",
+          "500": "#1C89B4",
+          "600": "#166A8C",
+          "700": "#104C64",
+          "800": "#092E3C",
+          "900": "#030F14"
+        }
+      }
+    },
+    "dark": {
+      "palette": {
+        "primary": {
+          "main": "#ff8db2"
+        },
+        "secondary": {
+          "main": "#28282a"
+        }
+      }
+    }
+  },
+  "siteTypeDisplayGroupMappings": [],
+  "cartLabel": {
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping"
+  },
+  "siteTypeLabelText": "Site Type",
+  "siteTypeDisplayGroupLabelText": "Site Type",
+  "siteTypeDisplayGroupLabelTextForPlural": "Site Types",
+  "lineOfBusinessToLabelMap": {
+    "CAMPING": "Camping",
+    "DAYUSE": "Day Use"
+  },
+  "availabilityCodeMap": {
+    "AVAILABLE": "Available",
+    "NO_DATE": "",
+    "CALL_CENTER": "Call Center Only",
+    "CALL_THE_PARK": "Call the Park",
+    "WALK_UP": "First-Come-First-Served",
+    "NOT_AVAILABLE": "Not Available"
+  },
+  "siteTypeLabelOnFacilitySearch": "Parks with site types",
+  "allSitesLabelOnFacilitySearch": "All",
+  "toggleBackButtonLabelText": "Take me to the old Site",
+  "toursAndTicketsLabelText": "Tours and Tickets",
+  "tourTicketsSoldAtFacilityOnlyLabelText": "Tour Tickets sold at Facility only",
+  "searchingDateWindow": 12,
+  "maxLengthOfStay": 365,
+  "LabelsCommonFacilitysearchEmpty": "There are no matching results based on the information you have provided. Please modify your search and try again."
+}
