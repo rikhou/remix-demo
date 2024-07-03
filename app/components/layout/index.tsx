@@ -25,8 +25,8 @@ const Layout = ({ children }: LayoutProps) => {
         <Box component="main" sx={{ flex: 1 }} data-ref="main">
           {children}
         </Box>
-        <Footer />
       </Box>
+      <Footer />
     </Container>
   );
 };

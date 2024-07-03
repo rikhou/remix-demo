@@ -1,6 +1,6 @@
 import { ATypography } from "mui";
-import { Box, CardMedia } from "@mui/material";
-import Link from "mui/Link";
+import { Box, CardMedia, Link } from "@mui/material";
+// import Link from "mui/Link";
 import type { Introduction as IntroductionType } from "redux/reducers/sharedSlice";
 
 interface IntroductionProps {

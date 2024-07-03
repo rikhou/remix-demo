@@ -1,6 +1,6 @@
-import { Grid, CardMedia } from "@mui/material";
+import { Grid, CardMedia, Link } from "@mui/material";
 import { ATypography } from "mui";
-import Link from "mui/Link";
+// import Link from "mui/Link";
 import { Government as GovernmentType } from "redux/reducers/sharedSlice";
 
 interface GovernmentProps {

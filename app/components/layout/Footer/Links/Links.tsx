@@ -1,5 +1,5 @@
-import { Grid, CardMedia } from "@mui/material";
-import Link from "mui/Link";
+import { Grid, CardMedia, Link } from "@mui/material";
+// import Link from "mui/Link";
 import { Footer } from "redux/reducers/sharedSlice";
 import AccordionContent from "./AccordionContent";
 import LinkContainer from "./LinkContainer";
