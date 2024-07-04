@@ -2,13 +2,13 @@ import * as React from "react";
 import * as ReactDOMServer from "react-dom/server";
 import { RemixServer } from "@remix-run/react";
 import type { EntryContext } from "@remix-run/node";
-import createEmotionCache from "./entryCommon/createEmotionCache";
-import theme from "./entryCommon/theme";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
 import createEmotionServer from "@emotion/server/create-instance";
-import MuiThemeProvider from "./entryCommon/MuiThemeProvider";
+import { store } from "redux/store";
+import { Provider } from "react-redux";
+import createEmotionCache from "./entryCommon/createEmotionCache";
+import MyThemeProvider from "./entryCommon/MyThemeProvider";
 
 export default function handleRequest(
   request: Request,
@@ -21,15 +21,15 @@ export default function handleRequest(
 
   function MuiRemixServer() {
     return (
-      <CacheProvider value={cache}>
-        {/* <ThemeProvider theme={theme}> */}
-        <MuiThemeProvider>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <RemixServer context={remixContext} url={request.url} />
-        </MuiThemeProvider>
-        {/* </ThemeProvider> */}
-      </CacheProvider>
+      <Provider store={store}>
+        <CacheProvider value={cache}>
+          <MyThemeProvider>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <RemixServer context={remixContext} url={request.url} />
+          </MyThemeProvider>
+        </CacheProvider>
+      </Provider>
     );
   }
 
@@ -47,11 +47,18 @@ export default function handleRequest(
     stylesHTML = `${stylesHTML}${newStyleTag}`;
   });
 
+  const preloadedState = store.getState();
+
   // Add the Emotion style tags after the insertion point meta tag
   const markup = html.replace(
     /<meta(\s)*name="emotion-insertion-point"(\s)*content="emotion-insertion-point"(\s)*\/>/,
     `<meta name="emotion-insertion-point" content="emotion-insertion-point"/>${stylesHTML}`
-  );
+  ).concat(`<script>
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+            /</g,
+            "\\u003c"
+          )}
+        </script>`);
 
   responseHeaders.set("Content-Type", "text/html");
 

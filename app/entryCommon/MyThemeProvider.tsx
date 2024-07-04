@@ -4,14 +4,12 @@ import { useSelector } from "react-redux";
 import appSelector from "redux/selectors/shared";
 import { combineThemeOptions } from "theme/utils";
 import { lightThemeOptions } from "theme/options";
-import { Provider } from "react-redux";
-import { store } from "redux/store";
 
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const MuiThemeProvider: FC<ThemeProviderProps> = (props) => {
+const MyThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children } = props;
 
   const themesOptions = useSelector(appSelector.getThemeOptionsList);
@@ -31,12 +29,7 @@ const MuiThemeProvider: FC<ThemeProviderProps> = (props) => {
 
 const MultiProvider: FC<ThemeProviderProps> = (props) => {
   const { children } = props;
-
-  return (
-    <Provider store={store}>
-      <MuiThemeProvider>{children}</MuiThemeProvider>
-    </Provider>
-  );
+  return <MyThemeProvider>{children}</MyThemeProvider>;
 };
 
 export default MultiProvider;

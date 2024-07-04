@@ -1,22 +1,15 @@
 import { Outlet, useRouteError, isRouteErrorResponse } from "@remix-run/react";
 import Document from "./entryCommon/Document";
-import { useEffect, useState } from "react";
 import { store } from "redux/store";
-import getMainConfig from "services/mainConfig";
-import Layout from "entryCommon/Layout";
+import sharedThunkActions from "redux/reducers/sharedThunk";
+import Layout from "components/layout";
+
+export const loader = async () => {
+  await sharedThunkActions.getMainConfig(store);
+  return null;
+};
 
 export default function App() {
-  const [dataLoaded, setDataLoaded] = useState(false);
-
-  useEffect(() => {
-    async function fetchData() {
-      await getMainConfig(store);
-      setDataLoaded(true);
-    }
-    if (!dataLoaded) {
-      fetchData();
-    }
-  }, [dataLoaded, store]);
   return (
     <Document>
       <Layout>

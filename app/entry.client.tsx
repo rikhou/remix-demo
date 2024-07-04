@@ -2,12 +2,17 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { RemixBrowser } from "@remix-run/react";
 import { CacheProvider } from "@emotion/react";
-import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import ClientStyleContext from "./entryCommon/ClientStyleContext";
 import createEmotionCache from "./entryCommon/createEmotionCache";
-import theme from "./entryCommon/theme";
-import MuiThemeProvider from "./entryCommon/MuiThemeProvider";
+import MultiProvider from "./entryCommon/MyThemeProvider";
+import { Provider } from "react-redux";
+import { createStore } from "redux/store";
+
+const preloadedState = window.__PRELOADED_STATE__;
+delete window.__PRELOADED_STATE__;
+
+const store = createStore(preloadedState);
 
 interface ClientCacheProviderProps {
   children: React.ReactNode;
@@ -36,15 +41,15 @@ const hydrate = () => {
   React.startTransition(() => {
     ReactDOM.hydrateRoot(
       document,
-      <ClientCacheProvider>
-        {/* <ThemeProvider theme={theme}> */}
-        <MuiThemeProvider>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <RemixBrowser />
-        </MuiThemeProvider>
-        {/* </ThemeProvider> */}
-      </ClientCacheProvider>
+      <Provider store={store}>
+        <ClientCacheProvider>
+          <MultiProvider>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <RemixBrowser />
+          </MultiProvider>
+        </ClientCacheProvider>
+      </Provider>
     );
   });
 };

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from "@reduxjs/toolkit";
 import type { AppThunk } from "redux/store";
-import commonData from "mockData/commondata.json";
+import getCommonData from "services/shared/commonData";
 import { isEmptyObj } from "utils/GeneralUtils";
 import type { ThemeOptions } from "@mui/material/styles";
 
@@ -206,34 +206,7 @@ export const {
   setThemeOptionsList,
 } = sharedSlice.actions;
 
-const initCommonData = (): AppThunk => async (dispatch, getState) => {
-  const state = getState();
-  const isCommonDataInitialized = !isEmptyObj(state.shared.data);
-  if (isCommonDataInitialized) return;
-
-  const responseData = commonData;
-  const {
-    theme,
-    firstLevelMenuItems,
-    bannerAlert,
-    searchCriteria,
-    maxLengthOfStay,
-    searchingDateWindow,
-    ...restResponseData
-  } = responseData;
-
-  const themeOptionsList = {
-    light: theme?.light,
-    dark: theme?.dark,
-  };
-  dispatch(setThemeOptionsList(themeOptionsList));
-  dispatch(setSharedData({ data: { ...restResponseData, searchCriteria } }));
-};
-
-const thunkActions = {
-  initCommonData,
-};
 const { actions } = sharedSlice;
 
-export { thunkActions, actions };
+export { actions };
 export default sharedSlice.reducer;
